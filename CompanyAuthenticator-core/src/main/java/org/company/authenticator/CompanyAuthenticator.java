@@ -48,7 +48,7 @@ public class CompanyAuthenticator implements NuxeoAuthenticationPlugin, NuxeoAut
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        return new UserIdentificationInfo("email@provider.com", "");
     }
 
     @Override

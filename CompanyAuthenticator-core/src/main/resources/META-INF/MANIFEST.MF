@@ -1,0 +1,9 @@
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Vendor: org.company.authenticator
+Bundle-Version: 1.0.0
+Bundle-Name: authenticator-core
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.company.authenticator.authenticator-core;singleton=true
+Nuxeo-Component: OSGI-INF/CompanyAuthenticator.xml

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="org.company.authenticator.CompanyAuthenticator" version="1.0">
+   <require>org.nuxeo.ecm.platform.ui.web.auth.defaultConfig</require>
+   <extension target="org.nuxeo.ecm.platform.login.LoginPluginRegistry" point="plugin">
+      <LoginPlugin name="CompanyLoginPlugin" class="org.company.authenticator.CompanyLoginPlugin">
+         <enabled>true</enabled>
+      </LoginPlugin>
+   </extension>
+   <extension target="org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService" point="chain">
+      <authenticationChain>
+         <plugins>
+            <plugin>COMPANY_AUTH</plugin>
+            <plugin>FORM_AUTH</plugin>
+         </plugins>
+      </authenticationChain>
+   </extension>
+   <extension target="org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService" point="specificChains">
+      <specificAuthenticationChain name="Automation">
+         <urlPatterns>
+            <url>(.)/automation.</url>
+         </urlPatterns>
+         <replacementChain>
+            <plugin>COMPANY_AUTH</plugin>
+            <plugin>AUTOMATION_BASIC_AUTH</plugin>
+         </replacementChain>
+      </specificAuthenticationChain>
+   </extension>
+</component>

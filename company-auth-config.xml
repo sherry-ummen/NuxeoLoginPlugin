@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="org.company.authenticator.authenticatorConfig" version="1.0">
+   <require>org.nuxeo.ecm.platform.ui.web.auth.defaultConfig</require>
+   <extension target="org.nuxeo.ecm.platform.ui.web.auth.service.PluggableAuthenticationService" point="authenticators">
+      <authenticationPlugin name="COMPANY_AUTH" enabled="true" class="org.company.authenticator.CompanyAuthenticator">
+      <loginModulePlugin>CompanyLoginPlugin</loginModulePlugin>
+         <parameters>
+            <parameter name="companyLoginURL">http://localhost/login</parameter>
+            <parameter name="companyAPIURL">http://localhost/logout/</parameter>
+         </parameters>
+      </authenticationPlugin>
+   </extension>
+</component>

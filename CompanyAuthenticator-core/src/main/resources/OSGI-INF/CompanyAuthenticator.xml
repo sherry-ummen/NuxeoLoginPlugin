@@ -18,6 +18,7 @@
       <specificAuthenticationChain name="Automation">
          <urlPatterns>
             <url>(.*)/automation.*</url>
+            <url>(.*)/api/v1.*</url>
          </urlPatterns>
          <replacementChain>
             <plugin>COMPANY_AUTH</plugin>
